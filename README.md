@@ -13,7 +13,7 @@ AI coding assistants (Cursor, Copilot, Windsurf) are fast, but they often halluc
 You don't even need to install it. Just run it anywhere using `npx`:
 
 ```bash
-npx ai-rules-init
+npx ai-vibe-rules-nugraha
 ```
 
 ### What happens next?

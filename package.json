@@ -1,10 +1,10 @@
 {
-  "name": "ai-coding-rules",
-  "version": "1.0.0",
+  "name": "ai-vibe-rules-nugraha",
+  "version": "1.0.1",
   "description": "Interactive CLI to inject strict AI coding rules (.cursorrules) into your project.",
   "main": "bin/cli.js",
   "bin": {
-    "ai-rules-init": "./bin/cli.js"
+    "ai-vibe-rules-nugraha": "./bin/cli.js"
   },
   "scripts": {
     "start": "node bin/cli.js"
