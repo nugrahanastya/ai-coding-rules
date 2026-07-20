@@ -1,55 +1,47 @@
-# AI Coding Rules (The "Vibe Coding" Toolkit) 🧠
+# AI Coding Rules CLI 🧠🚀
 
-A comprehensive collection of `.cursorrules` and `.github/copilot-instructions.md` files for modern tech stacks.
+**The ultimate "Vibe Coding" Toolkit.**
 
-**The Problem:** AI coding assistants (like Cursor, GitHub Copilot, Windsurf) are incredibly fast, but if left unchecked, they write messy, inconsistent code that ignores your framework's best practices. They will use `any` in TypeScript, raw SQL in Python, and massive stateful widgets in Flutter.
+AI coding assistants (Cursor, Copilot, Windsurf) are fast, but they often hallucinate bad code, ignore best practices, and use raw SQL when they shouldn't. 
 
-**The Solution:** You need to give the AI a strict set of rules before it writes a single line of code.
+**You need to give the AI a strict set of rules before it writes a single line of code.**
 
-This repository provides copy-pasteable, highly optimized instruction files crafted by senior engineers. By dropping these files into your project root, your AI will instantly write production-grade, idiomatically correct code for your specific stack.
+`ai-coding-rules` is an interactive CLI that automatically injects senior-level instructions (`.cursorrules` or `.github/copilot-instructions.md`) directly into your project directory.
 
----
+## 🚀 Usage
 
-## 🚀 How to Use
+You don't even need to install it. Just run it anywhere using `npx`:
 
-### For Cursor IDE Users
-1. Find your tech stack in the folders above (e.g., `typescript-nextjs`).
-2. Copy the `.cursorrules` file from that folder.
-3. Paste it into the **root** of your own project.
-4. Open Cursor, and the AI will automatically read and follow these rules for every chat and inline generation.
+```bash
+npx ai-rules-init
+```
 
-### For GitHub Copilot Users
-1. Find your tech stack in the folders above.
-2. Copy the `copilot-instructions.md` file.
-3. Paste it into a `.github/` folder at the root of your project (so the path is `.github/copilot-instructions.md`).
-4. GitHub Copilot Chat will automatically ingest these rules as context.
+### What happens next?
+1. The CLI will ask you: **"What is your primary tech stack?"** (Choose between Next.js, Python FastAPI, Golang, Flutter, etc.)
+2. It will ask: **"Which AI Assistant are you using?"** (Cursor or GitHub Copilot).
+3. **Boom!** The perfect ruleset is instantly copied into your project.
 
-### For Windsurf / Claude Code / Others
-Most modern AI IDEs and CLI agents support `.cursorrules` or generic `instructions.md` files. Simply copy the content and paste it into your tool's respective configuration section.
+## 🛠️ Supported Stacks
 
----
+Currently, we have hand-crafted, highly optimized rules for:
 
-## 🛠️ Supported Stacks (So Far)
+*   **TypeScript + Next.js (App Router)** - Focuses on Server Components, Zod validation, and Tailwind.
+*   **Python + FastAPI** - Focuses on Pydantic v2, Async SQLAlchemy, and clean architecture.
+*   **Golang (Standard Library Focus)** - Idiomatic Go, explicit error handling, and concurrency.
+*   **Flutter + BLoC** - Sound null safety, Clean Architecture, and separation of UI from logic.
 
-We are constantly expanding. Currently, we have hand-crafted rules for:
+## 🤔 Want to do it manually?
 
-*   **[TypeScript + Next.js (App Router)](./typescript-nextjs/)** - Focuses on Server Components, Zod validation, and Tailwind CSS.
-*   **[Python + FastAPI](./python-fastapi/)** - Focuses on Pydantic v2, Async SQLAlchemy, and clean architecture.
-*   **[Golang (Standard Library Focus)](./go-standard/)** - Focuses on idiomatic Go, explicit error handling, and concurrency management.
-*   **[Flutter + BLoC](./flutter-bloc/)** - Focuses on sound null safety, Clean Architecture, and separation of UI from business logic.
-
----
+If you hate CLIs, you can still clone this repository and manually copy the files from the folders (`/typescript-nextjs`, `/python-fastapi`, etc.) into your project.
 
 ## 🤝 Contributing
 
-This is a community-driven project! If you are a senior developer in a stack that isn't listed here (e.g., Laravel, Ruby on Rails, Rust, Kotlin/Android), please submit a Pull Request!
+This is a community-driven project! If you are a senior developer in a stack that isn't listed here, please submit a Pull Request.
 
 **Guidelines for PRs:**
-1. Keep the rules concise. AI context windows are large, but attention spans are limited. Bullet points work best.
-2. Focus on architecture, safety, and modern idioms, not just basic syntax formatting (Prettier/Linting should handle that).
-3. Include both a `.cursorrules` and a `copilot-instructions.md` (they should have identical content).
-
----
+1. Keep the rules concise (bullet points).
+2. Focus on architecture, safety, and modern idioms, not just basic syntax formatting.
+3. Add a new folder with `.cursorrules` and `copilot-instructions.md`, then update the `choices` array in `bin/cli.js`.
 
 ## License
-MIT. Use these prompts freely in any personal, commercial, or enterprise projects. Let's build better software with AI!
+MIT. Let's build better software with AI!
